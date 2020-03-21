@@ -8,6 +8,11 @@ package problem2;
 public abstract class Person {
     
     protected String Name ;
-    protected int ID ;
+    protected final  int ID ;
+
+    public Person(int id) {
+        this.ID = id;
+    }
+    
     
 }

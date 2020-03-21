@@ -12,14 +12,13 @@ public class Customer extends Person{
     
     public Customer(String name , int id , float voucher){
         
+        super(id) ;
         Name = name ;
         Voucher = voucher ;
-        ID = id ;
+        
         count++ ;
     }
 
-    Customer() {
-    }
 
     public float getVoucher() {
         return Voucher;

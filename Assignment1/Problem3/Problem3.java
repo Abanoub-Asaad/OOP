@@ -14,67 +14,47 @@ public class Problem3 {
 
         int BALANCE1 , BALANCE2, MinimumBALANCE = 1000 , choice , value;
         sc = new Scanner(System.in);
-        Account Acc1 , Acc2 ;
-        
+        Customer customer1 , customer2 ;
 
-        //======================First Customer ======================
-        System.out.print("Hi , Enter First Balance : ");
+      //======================First Customer ======================
+        System.out.print("Hi , Enter Balance For Client 1 : ");
         BALANCE1 = sc.nextInt();
         
-        if (BALANCE1 < MinimumBALANCE) {
-
+        if (BALANCE1 < MinimumBALANCE)
+        {
             System.out.println("\nYou Can't make a Checking Account Because Min Balance = 1000, So You can only make a Saving Account");
-             Acc1 = new SavingAccount("Abanoub", "Cairo", "01212836883");
-             Acc1.makeAccount(BALANCE1,250505);
-        } else {
-
-            System.out.println("\nOk , You'll make a Saving Account ");
-             Acc1 = new CheckingAccount("Abanoub", "Cairo", "01212836883");
-             Acc1.makeAccount(BALANCE1,250505);
-        }
-        
-        //-----
-        System.out.print("\nIf you want to make a Deposit Enter , 1 and Deposit value\nIf you want to make a Withdrawal Enter , 2 and Withdrawal value\nChoice :");
-        if(sc.nextInt()==1){ 
-            System.out.print("Value : ");
-            Acc1.makeDeposit(sc.nextInt());
+            customer1 = new Customer("Abanoub", "Cairo", "01212836883");
+            customer1.setAccountData("SavingAccount" , BALANCE1 , 25050 );
+            
         } 
-        else{
-            System.out.print("Value : ");
-            Acc1.withdrawal(sc.nextInt());
+        else
+        {
+            System.out.println("\nOk , You'll make a Checking Account ");
+             customer1 = new Customer("Abanoub", "Cairo", "01212836883");
+             customer1.setAccountData("CheckingAccount" , BALANCE1 , 25050 );
         }
-        Acc1.displayData();
         //====================Second Customer =====================
         
-        System.out.print("\nEnter Second Balance : ");
+        System.out.print("------------------------------------------\nEnter Balance For Client 2 : ");
         BALANCE2 = sc.nextInt();
 
-        if (BALANCE2 < MinimumBALANCE) {
+        if (BALANCE2 < MinimumBALANCE)
+        {
 
             System.out.println("\nYou Can't make a Checking Account Because Min Balance = 1000, So You can only make a Saving Account");
-             Acc2 = new SavingAccount("Ali", "Giza", "01212856224");
-             Acc2.makeAccount(BALANCE2,3005050);
-        } else {
-
-            System.out.println("\nOk , You'll make a Saving Account ");
-             Acc2 = new CheckingAccount("Ali", "Giza", "01212856224");
-             Acc2.makeAccount(BALANCE2,3005050);
-        }
-        
-        //-----
-        System.out.print("\nIf you want to make a Deposit Enter , 1 and Deposit value\nIf you want to make a Withdrawal Enter , 2 and Withdrawal value\nChoice :");
-        if(sc.nextInt()==1){ 
-            System.out.print("Value : ");
-            Acc2.makeDeposit(sc.nextInt());
+             customer2 = new Customer("Ali", "Giza", "01212856224");
+             customer2.setAccountData("SavingAccount" ,BALANCE2,3005050);
         } 
-        else{
-            System.out.print("Value : ");
-            Acc2.withdrawal(sc.nextInt());
+        else
+        {
+
+            System.out.println("\nOk , You'll make a Checking Account ");
+             customer2 = new Customer("Ali", "Giza", "01212856224");
+             customer2.setAccountData("CheckingAccount" ,BALANCE2,3005050);
         }
-        Acc2.displayData();
-        //==============================================================
-        
-        
+        //===========
+        customer1.displayData();
+        customer2.displayData();
     }
 
 }

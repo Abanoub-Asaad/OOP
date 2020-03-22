@@ -10,12 +10,12 @@ public class CheckingAccount extends Account{
     private float minimumBalance ;
     
     
-    CheckingAccount(String name , String address , String phone){
+    CheckingAccount(int balance , int accountNmber){
         
-        customer = new Customer (name , address, phone) ;
-       
+        this.balance = balance ;
+        this.accountNumber = accountNmber ;
+        checkRequest();
     }
-
     
 
     @Override

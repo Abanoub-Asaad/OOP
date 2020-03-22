@@ -23,17 +23,6 @@ public abstract class Account {
         this.accountNumber = accountNumber ;
     }
     
-    public void displayData(){
-        System.out.println("----------Details--------\nClient Name : "+customer.getName());
-        System.out.println("Client Address : "+customer.getAddress());
-        System.out.println("Client Phone: "+customer.getPhone());
-        System.out.println("Account Number : "+accountNumber);
-        System.out.println("Date Opened : "+dateOpened); 
-        System.out.println("Current Balance : "+displayCurrentBalance());
-        System.out.println("--------------------------");
-       // System.out.println("\n--------------------------------------------");
-    }
-    
     public void makeDeposit(float salary){
         balance+=salary ;
     }
@@ -41,8 +30,23 @@ public abstract class Account {
     public void withdrawal(float salary){
         balance-=salary ;
     }
+
     
-    
+    public void checkRequest(){
+        System.out.print("\nIf you want to make a Deposit Enter 1 and Deposit value\nIf you want to make a Withdrawal Enter 2 and Withdrawal value\nChoice : ");
+      
+        if(Problem3.sc.nextInt()==1){ 
+            System.out.print("Value : ");
+            makeDeposit(Problem3.sc.nextInt());
+        } 
+        else if(Problem3.sc.nextInt()==2){
+            System.out.print("Value : ");
+            withdrawal(Problem3.sc.nextInt());
+        }
+        else{
+            System.out.print("Your request is invalid ");
+        }
+    }
 
     public void setAccountNumber(int accountNumber) {
         this.accountNumber = accountNumber;

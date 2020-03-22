@@ -9,11 +9,13 @@ public class SavingAccount extends Account{
     
     private float interestRate = 0.7f ; 
 
-    SavingAccount(String name , String address , String phone){
+    SavingAccount(int balance , int accountNmber){
         
-        customer = new Customer (name , address, phone) ;
-        
+        this.balance = balance ;
+        this.accountNumber = accountNmber ;
+        checkRequest();
     }
+    
     
     
     

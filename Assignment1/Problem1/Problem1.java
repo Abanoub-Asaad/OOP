@@ -19,7 +19,7 @@ public class Problem1 {
         online_order_obj.displayData();
         normal_order_obj.displayData();
         System.out.println("----------------------------------------");
-        System.out.println("Total Price of The Online Order = "+online_order_obj.getTotalPrice());
+        System.out.println("Total Price of The Online Order = "+online_order_obj.getTotalPrice()+online_order_obj.getShipmentFee());
         System.out.println("Total Price of The Normal Order = "+normal_order_obj.getTotalPrice());
         System.out.println("Total Price of The Normal Order After Discount  = "+normal_order_obj.calculateDiscount(normal_order_obj.getTotalPrice()));
     }

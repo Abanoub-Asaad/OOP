@@ -50,7 +50,17 @@ public class Order {
         }
         
         public void removeItem(String itemName){
-            
+            for(int i=0 ; i<items.length ; i++ )
+            {
+                if(items[i].getName()==itemName)
+                {
+                    // shifting elements
+                    for(int j = i; j < items.length - 1; j++){
+                        items[j] = items[j+1];
+                    }
+                    break;
+                }
+            }
         }
 
     public void setPaymentType(String PaymentType) {

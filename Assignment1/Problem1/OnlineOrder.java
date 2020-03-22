@@ -15,6 +15,9 @@ private final int shipmentFee = 0 ;
         setPaymentType("OnlineOrder");
     }
 
-    
+    public int getShipmentFee() {
+        return shipmentFee;
+    }
+
     
 }

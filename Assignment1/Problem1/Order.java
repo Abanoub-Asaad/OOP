@@ -16,7 +16,8 @@ public class Order {
         private String PaymentType ;
         private Product items [] = new Product[5] ;
 
-        public Order(int numOfItems ) {
+        public Order(int numOfItems )
+        {
             
            this.numOfItems = numOfItems ;
            
@@ -68,11 +69,11 @@ public class Order {
  
     public void displayData(){
         
-        System.out.println("==================================\n"+"For "+getPaymentType() );
+        System.out.println("\n"+"----------------For "+getPaymentType()+"----------------" );
         for(int i=0 ; i<numOfItems ; i++){
             System.out.println("You ordered "+items[i].getName()+" and its price = "+items[i].getPrice()
                     +" , with quantity = "+items[i].getQuantity());
         }
-        System.out.println("==================================");
+        
     }
 }
